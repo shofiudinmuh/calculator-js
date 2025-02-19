@@ -41,3 +41,39 @@ body {
     text-align: right;
     border: none;
 }
+.display-result {
+    font-size: 1.15rem;
+    color: black;
+}
+
+.calculator-keys {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 0.4rem;
+}
+
+button {
+    height: 4rem;
+    font-size: 1.5rem;
+    border-radius: 1rem;
+    border: none;
+    background-color: aquamarine;
+    color: aliceblue;
+    transition: background-color 0.3s ease;
+}
+
+button:hover {
+    background-color: forestgreen;
+}
+.operator {
+    background-color: tomato;
+}
+
+.equal-sign {
+    background-color: blue;
+    color: azure;
+}
+
+.zero {
+    grid-column: span 2;
+}
