@@ -28,6 +28,7 @@ function inputDecimal(dot) {
     if (!calculator.displayValue.includes(dot)) {
         calculator.displayValue += dot;
     }
+    updateDisplay();
 }
 
 function handleOperator(nextOperator) {
@@ -81,7 +82,7 @@ function calculate(firstOperand, secondOperand, operator) {
         return firstOperand - secondOperand;
     } else if (operator === '*') {
         return firstOperand * secondOperand;
-    } else if (operaror === '/') {
+    } else if (operator === '/') {
         return firstOperand / secondOperand;
     } else if (operator === '√') {
         // hanya untuk operator akar pangkat 2
@@ -98,6 +99,7 @@ function resetCalculator() {
     calculator.firstOperand = null;
     calculator.waitingForSecondOperand = false;
     calculator.operator = null;
+    updateDisplay();
 }
 
 function handleEqual() {
@@ -108,6 +110,7 @@ function handleEqual() {
         const result = calculate(firstOperand, inputValue, operator);
         calculator.displayValue = `${parseFloat(result.toFixed(7))}`;
         calculator.firstOperand = null;
+        calculator.operator = null;
         calculator.waitingForSecondOperand = false;
         updateDisplay();
     }
