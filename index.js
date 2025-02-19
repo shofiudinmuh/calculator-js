@@ -6,7 +6,7 @@ const calculator = {
 };
 
 function updateDisplay() {
-    const display = document.querySelector('.calculator-diplay');
+    const display = document.querySelector('.calculator-display');
     display.value = calculator.displayValue;
 }
 
